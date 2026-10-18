@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "gold-golem-gametest",
+	"version": "1.0.0",
+	"name": "Gold Golem tests",
+	"description": "Loads the mod and joins a world, then builds a gold golem on a floor in the sky and holds it to what the readme says.",
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-client-gametest": [
+			"justfatlard.gold_golem.gametest.SmokeTest",
+			"justfatlard.gold_golem.gametest.GoldGolemBehaviour",
+			"justfatlard.gold_golem.gametest.GoldGolemPictured"
+		]
+	},
+	"depends": {
+		"gold-golem-justfatlard": "*",
+		"fabric-client-gametest-api-v1": "*"
+	}
+}

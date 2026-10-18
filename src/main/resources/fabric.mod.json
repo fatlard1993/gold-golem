@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "gold-golem-justfatlard",
+	"version": "${version}",
+	"name": "Gold Golem",
+	"description": "A golem built of gold, the way an iron one is built of iron. It mends the hurt around it rather than fighting, runs on gilt that comes back by itself and faster with gold, and keeps nearby piglins as calm as if you were wearing gold.",
+	"authors": [
+		"justfatlard"
+	],
+	"contact": {
+		"homepage": "https://github.com/fatlard1993/gold-golem",
+		"sources": "https://github.com/fatlard1993/gold-golem",
+		"issues": "https://github.com/fatlard1993/gold-golem/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/gold-golem-justfatlard/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"justfatlard.gold_golem.Main"
+		]
+	},
+	"mixins": [
+		"gold-golem-justfatlard.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${loaderVersion}",
+		"minecraft": "${minecraftDependency}",
+		"java": ">=25",
+		"pandorical": ">=15.21.0",
+		"fabric-api": "${fabricApiVersion}"
+	}
+}

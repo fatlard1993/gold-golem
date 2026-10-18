@@ -1,0 +1,19 @@
+{
+	"overview": [
+		"A golem built of gold that mends the hurt around it and keeps nearby piglins calm."
+	],
+	"versions": {
+		"1.0.0": [
+			"Build a gold golem like an iron one, out of blocks of gold.",
+			"Every five seconds it gives everyone hurt within six blocks Regeneration II: players, villagers, golems and tamed animals.",
+			"Each pulse costs one gilt. Gilt comes back by itself, one every thirty seconds, and gold nuggets and golden carrots top it up faster; right-click with an empty hand to see how much it has.",
+			"A body of its own, between the iron golem and the copper golem: the iron golem's nose, brow and red eyes, a wide head with a little bell on top, in smooth polished gold. About two thirds of an iron golem's height.",
+			"It rings a bell note when it mends.",
+			"Gold ingots repair it.",
+			"Piglins leave alone anyone within sixteen blocks of one, as if they were wearing gold.",
+			"It stays near where it was built, or wherever you take its lead off.",
+			"A Gold Golem Spawn Egg, with the other spawn eggs.",
+			"Without Pandorical on your client, it looks like a small iron golem."
+		]
+	}
+}
