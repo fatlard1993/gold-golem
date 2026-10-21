@@ -3,6 +3,9 @@
 		"A golem built of gold that mends the hurt around it and keeps nearby piglins calm."
 	],
 	"versions": {
+		"1.1.0": [
+			"With Block Tip installed, looking at a gold golem shows how much gilt it has."
+		],
 		"1.0.0": [
 			"Build a gold golem like an iron one, out of blocks of gold.",
 			"Every five seconds it gives everyone hurt within six blocks Regeneration II: players, villagers, golems and tamed animals.",

@@ -29,5 +29,8 @@
 		"java": ">=25",
 		"pandorical": ">=15.21.0",
 		"fabric-api": "${fabricApiVersion}"
+	},
+	"suggests": {
+		"block-tip": "*"
 	}
 }
