@@ -47,11 +47,11 @@ import org.jspecify.annotations.Nullable;
  * the server's alone.
  */
 public class GoldGolem extends IronGolem {
-	public static final int MAX_GILT = 64;
-	/** What a newly built golem has to spend: a few minutes of work before it needs feeding. */
-	public static final int STARTING_GILT = 16;
+	public static final int MAX_GILT = 24;
+	/** What a newly built golem has to spend: half a minute of mending before it needs feeding. */
+	public static final int STARTING_GILT = 6;
 	/** One gilt back every this many ticks, by itself, up to the most it holds. */
-	public static final int GILT_REGEN_TICKS = 600;
+	public static final int GILT_REGEN_TICKS = 2400;
 	public static final int GILT_PER_NUGGET = 1;
 	public static final int GILT_PER_GOLDEN_CARROT = 8;
 	/** An iron ingot gives an iron golem a quarter of its health back; a gold ingot does the same here. */
