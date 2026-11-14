@@ -220,7 +220,7 @@ public class GoldGolem extends IronGolem {
 		return InteractionResult.SUCCESS;
 	}
 
-	public Component giltReading() {
+	private Component giltReading() {
 		return Component.translatableWithFallback("entity.gold-golem-justfatlard.gold_golem.gilt",
 			"Gilt: %s of %s", this.gilt, MAX_GILT);
 	}

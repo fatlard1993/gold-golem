@@ -6,8 +6,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 
 /**
- * A gold golem's gilt, on the card. It is the server's alone, so looking is the only way to read it
- * short of walking up and clicking.
+ * A gold golem's gilt, as a gold bar over its health on the card. It is the server's alone, so
+ * looking is the only way to see it run low short of walking up and clicking.
  *
  * <p>Compiled against block-tip's API and guarded at the call site by a mod-loaded check, so a
  * server without it never loads this class.
@@ -15,12 +15,14 @@ import net.minecraft.world.entity.Entity;
 public final class GoldGolemTips {
 	private GoldGolemTips() {}
 
+	private static final String GILT_COLOR = "#FFE8B820";
+
 	public static void register() {
-		BlockTipApi.describeEntity(GoldGolemTips::describe);
+		BlockTipApi.meterEntity(GoldGolemTips::gilt);
 	}
 
-	private static String describe(Entity entity, ServerPlayer player) {
+	private static BlockTipApi.Meter gilt(Entity entity, ServerPlayer player) {
 		if (!(entity instanceof GoldGolem golem)) return null;
-		return golem.giltReading().getString();
+		return new BlockTipApi.Meter((float) golem.getGilt() / GoldGolem.MAX_GILT, GILT_COLOR);
 	}
 }

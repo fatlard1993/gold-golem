@@ -32,7 +32,7 @@ That is four blocks of gold, thirty-six ingots. It is meant to be something you 
 | Gold nugget | 1 gilt |
 | Golden carrot | 8 gilt |
 
-It holds at most 24. A pulse only goes out when someone in reach is actually hurt, so a golem in a quiet corner fills back up on its own. A long fight drains it faster than it refills - a pulse every five seconds against one gilt back every two minutes, so a full golem runs dry in about two minutes - and that is when the gold in your pocket matters. Right-click one with an empty hand to see how much it has left. With none, it mends nobody and stops going to the hurt until some comes back.
+It holds at most 24. A pulse only goes out when someone in reach is actually hurt, so a golem in a quiet corner fills back up on its own. A long fight drains it faster than it refills - a pulse every five seconds against one gilt back every two minutes, so a full golem runs dry in about two minutes - and that is when the gold in your pocket matters. Right-click one with an empty hand to see how much it has left, or, with [Block Tip](https://github.com/fatlard1993/block-tip) installed, just look at it: the gold bar over its health is its gilt. With none, it mends nobody and stops going to the hurt until some comes back.
 
 **Its own body is repaired with gold ingots**, ten health each, the way an iron golem's is with iron. It has 40 health to an iron golem's 100: gold is the soft metal, and this is the golem you protect rather than the one that protects you. Golems mend each other, so two gold golems in reach of one another keep each other on their feet, at the cost of their gilt.
 

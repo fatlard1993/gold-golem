@@ -31,7 +31,10 @@
 		"fabric-api": "${fabricApiVersion}"
 	},
 	"suggests": {
-		"block-tip": "*"
+		"block-tip": ">=1.2.0"
+	},
+	"breaks": {
+		"block-tip": "<1.2.0"
 	},
 	"custom": {
 		"modmenu": {
