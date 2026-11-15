@@ -1,0 +1,43 @@
+{
+  "demo": {
+    "name": "Gold Golem",
+    "icon": "gold-golem-justfatlard:gold_golem_spawn_egg",
+    "about": [
+      "A golem built of gold the way an iron one is built of iron, that mends everyone hurt around it and keeps piglins as calm as if you wore gold.",
+      "The piglins here want a fight. Stack the gold blocks the way you would iron, pumpkin on top last, then stay close while it heals you, and feed it nuggets or golden carrots when it runs low."
+    ]
+  },
+  "pvp_preset": 1,
+  "needs": ["gold-golem-justfatlard"],
+  "preset": {
+    "name": "Gold Golem",
+    "icon": "gold-golem-justfatlard:gold_golem_spawn_egg",
+    "pvp": false,
+    "game_mode": "survival",
+    "entry_kit": [
+      {"slot": 0, "item": {"id": "minecraft:gold_block", "count": 4}},
+      {"slot": 1, "item": {"id": "minecraft:carved_pumpkin", "count": 1}},
+      {"slot": 2, "item": {"id": "minecraft:gold_nugget", "count": 16}},
+      {"slot": 3, "item": {"id": "minecraft:golden_carrot", "count": 4}},
+      {"slot": 4, "item": {"id": "minecraft:gold_ingot", "count": 4}},
+      {"slot": 5, "item": {"id": "minecraft:lead", "count": 1}},
+      {"slot": 8, "item": {"id": "minecraft:cooked_porkchop", "count": 8}},
+      {"slot": 40, "item": {"id": "minecraft:shield", "count": 1}},
+      {"slot": 38, "item": {"id": "minecraft:iron_chestplate", "count": 1}}
+    ],
+    "respawn_kit": "entry",
+    "goal": "time",
+    "mobs": "always",
+    "mob_rarity": "normal",
+    "mob_default": "off",
+    "mob_levels": {
+      "minecraft:piglin": "common"
+    },
+    "life": 15,
+    "size": 3,
+    "world": "nether",
+    "shape": "flat",
+    "biome": "minecraft:crimson_forest",
+    "weather": "clear"
+  }
+}
