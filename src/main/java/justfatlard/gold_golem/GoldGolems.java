@@ -5,6 +5,8 @@ import justfatlard.pandorical.api.EntityRegistration;
 import justfatlard.pandorical.api.ItemRegistration;
 import justfatlard.pandorical.api.PandoricalApi;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityType;
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -92,6 +94,14 @@ public final class GoldGolems {
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS)
 			.register(output -> output.accept(SPAWN_EGG));
+
+		ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
+			if (entity instanceof GoldGolem golem) GoldGolem.loaded(level, golem);
+		});
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
+			if (entity instanceof GoldGolem golem) GoldGolem.unloaded(level, golem);
+		});
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> GoldGolem.forgetAll());
 	}
 
 	/** Whether a pumpkin set on {@code top} would finish a gold golem; what a dispenser asks before placing one. */

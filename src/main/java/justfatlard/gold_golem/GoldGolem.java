@@ -1,6 +1,10 @@
 package justfatlard.gold_golem;
 
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -35,6 +39,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.phys.AABB;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -248,9 +253,33 @@ public class GoldGolem extends IronGolem {
 		return Component.translatableWithFallback(this.getType().getDescriptionId(), "Gold Golem");
 	}
 
+	/** Every gold golem loaded, by level, so a piglin asking after one where there are none asks nothing of the world. */
+	private static final Map<ServerLevel, Set<GoldGolem>> LOADED = new IdentityHashMap<>();
+
+	static void loaded(final ServerLevel level, final GoldGolem golem) {
+		LOADED.computeIfAbsent(level, key -> Collections.newSetFromMap(new IdentityHashMap<>())).add(golem);
+	}
+
+	static void unloaded(final ServerLevel level, final GoldGolem golem) {
+		Set<GoldGolem> golems = LOADED.get(level);
+		if (golems != null && golems.remove(golem) && golems.isEmpty()) LOADED.remove(level);
+	}
+
+	static void forgetAll() {
+		LOADED.clear();
+	}
+
 	/** Whether a gold golem stands near enough to {@code entity} to keep the piglins around it calm. */
 	public static boolean isKeepingPeace(final LivingEntity entity) {
-		return !entity.level().getEntitiesOfClass(GoldGolem.class, entity.getBoundingBox().inflate(PEACE_RADIUS),
-			LivingEntity::isAlive).isEmpty();
+		AABB near = entity.getBoundingBox().inflate(PEACE_RADIUS);
+		if (!(entity.level() instanceof ServerLevel level)) {
+			return !entity.level().getEntitiesOfClass(GoldGolem.class, near, LivingEntity::isAlive).isEmpty();
+		}
+		Set<GoldGolem> golems = LOADED.get(level);
+		if (golems == null) return false;
+		for (GoldGolem golem : golems) {
+			if (golem.isAlive() && golem.getBoundingBox().intersects(near)) return true;
+		}
+		return false;
 	}
 }
