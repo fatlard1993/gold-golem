@@ -3,7 +3,7 @@
 	"id": "gold-golem-justfatlard",
 	"version": "${version}",
 	"name": "Gold Golem",
-	"description": "A golem built of gold, the way an iron one is built of iron. It mends the hurt around it rather than fighting, runs on gilt that comes back by itself and faster with gold, and keeps nearby piglins as calm as if you were wearing gold.",
+	"description": "A golem of gold that mends the hurt around it rather than fighting",
 	"authors": [
 		"justfatlard"
 	],
