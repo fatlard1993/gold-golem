@@ -3,6 +3,9 @@
 		"A golem built of gold that mends the hurt around it and keeps nearby piglins calm."
 	],
 	"versions": {
+		"1.1.4": [
+			"Describes itself in one short line of what it adds."
+		],
 		"1.1.3": [
 			"A demo to play in PvP Dimensions' onboarding.",
 			"A piglin asking whether a gold golem stands near a player checks only the gold golems loaded, and nothing at all where there are none, instead of searching the blocks around them."
